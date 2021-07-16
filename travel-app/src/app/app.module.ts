@@ -9,7 +9,8 @@ import { HomeComponent } from './home/home.component';
 import { BlogPageComponent } from './blog-page/blog-page.component';
 import { TravelComponent } from './travel/travel.component';
 import { FooterComponent } from './footer/footer.component';
-import { ReactiveFormsModule } from '@angular/forms'; // just in case implemented from the get go
+import { ReactiveFormsModule } from '@angular/forms';
+import { CartComponent } from './cart/cart.component'; // just in case implemented from the get go
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +19,8 @@ import { ReactiveFormsModule } from '@angular/forms'; // just in case implemente
     HomeComponent,
     BlogPageComponent,
     TravelComponent,
-    FooterComponent
+    FooterComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

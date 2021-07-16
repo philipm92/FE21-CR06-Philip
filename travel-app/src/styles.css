@@ -1,11 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  background: url("assets/img/beach_background_1920.jpg") no-repeat center center fixed !important;
-  background-size: cover !important;
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
-.footer {
-  position: fixed;
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url("assets/img/beach_background_1920.jpg") !important;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #own-gradient-navbar {
@@ -19,12 +27,10 @@ body {
 }
 
 .own-text-shadow {
-  text-shadow: 2px 2px 4px black !important;
+  text-shadow: 1px 1px 6px darkblue !important;
 }
 
 #own-logo-size {
-  margin: 0 !important;
-  padding: 0 !important;
   width: 40px !important;
   height: auto !important;
 }
@@ -40,5 +46,11 @@ small a:hover {
   color: skyblue !important;
   -webkit-text-decoration-line: underline !important;
           text-decoration-line: underline !important;
+}
+
+.own-btn:hover {
+  color: #648cd2;
+  -webkit-box-shadow: 1px 1px 10px rgba(40, 40, 200, 0.3);
+          box-shadow: 1px 1px 10px rgba(40, 40, 200, 0.3);
 }
 /*# sourceMappingURL=styles.css.map */

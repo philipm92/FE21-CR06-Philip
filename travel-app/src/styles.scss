@@ -1,12 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+$btn-text-color: rgb(100, 140, 210);
+$btn-shadow-color: rgba(40, 40, 200, 0.3);
+
+* {
+    box-sizing: border-box;
+}
+html,
 body {
-    background: url('assets/img/beach_background_1920.jpg') no-repeat center center fixed !important;
-    background-size: cover !important;
+    margin: 0;
+    padding: 0;
 }
 
-.footer {
-    position: fixed;
+
+body {
+    background: url('assets/img/beach_background_1920.jpg') !important;
+    // background-attachment: fixed;
+    // background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
 
 #own-gradient-navbar {
     background: linear-gradient(skyblue, rgba(255, 255, 255, 0)) !important;
@@ -17,12 +30,10 @@ body {
 }
 
 .own-text-shadow {
-    text-shadow: 2px 2px 4px black !important;
+    text-shadow: 1px 1px 6px darkblue !important;
 }
 
 #own-logo-size {
-    margin: 0 !important;
-    padding: 0 !important;
     width: 40px !important; // so small that pixel measurement should be fine.
     height: auto !important;
 }
@@ -36,6 +47,14 @@ small a {
         text-decoration-line: underline !important;
     }
 }
+
+
+.own-btn:hover {
+    color: $btn-text-color;
+    box-shadow: 1px 1px 10px $btn-shadow-color;
+}
+
+
 // Mimicking bootstrap tablet breakpoint
 // @media screen and (min-width: 768px) {
 

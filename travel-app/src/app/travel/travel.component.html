@@ -1,1 +1,18 @@
-<p>travel works!</p>
+<h1 class="text-center mt-3 mt-md-4 mb-2 mb-md-4 own-text-shadow">Travel Destination</h1>
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-1 mx-lg-4 mb-4"> <!-- START BLOG GRID -->
+    <div *ngFor="let travel of travel_posts; index as travelId" class="col col-md-6 col-lg-3">
+        <div class="card h-100 bg-light text-dark">
+            <div class="card-header h5 text-center">{{travel.name}}</div>
+            <img src="assets/img/{{travel.image}}" class="img-fluid d-none d-md-inline" alt="{{travel.name}}">
+            <div class="card-body">
+                <p class="card-text text-center">{{travel.GetPosition()[0]}}<br />{{travel.GetPosition()[1]}}<br />{{travel.GetPosition()[2]}}</p>
+                <em><small>Created: {{travel.GetBlogDate()[0]}} <strong>-</strong> {{travel.GetBlogDate()[1]}}</small></em>
+            </div>
+            <!-- <div class="card-footer h6 text-center text-muted">
+                
+            </div>  -->
+            <a href="#" class="btn btn-primary">Book Location</a>
+        </div>
+    </div>
+</div> <!-- END BLOG GRID --> 
