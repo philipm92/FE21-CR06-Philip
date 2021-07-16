@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+  background: url("assets/img/beach_background_1920.jpg") no-repeat center center fixed !important;
+  background-size: cover !important;
+}
+
+.footer {
+  position: fixed;
+}
+
+#own-gradient-navbar {
+  background: -webkit-gradient(linear, left top, left bottom, from(skyblue), to(rgba(255, 255, 255, 0))) !important;
+  background: linear-gradient(skyblue, rgba(255, 255, 255, 0)) !important;
+}
+
+#own-gradient-footer {
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(skyblue)) !important;
+  background: linear-gradient(rgba(255, 255, 255, 0), skyblue) !important;
+}
+
+.own-text-shadow {
+  text-shadow: 2px 2px 4px black !important;
+}
+
+#own-logo-size {
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 40px !important;
+  height: auto !important;
+}
+
+small a {
+  color: white !important;
+  font-style: italic !important;
+  -webkit-text-decoration-line: none !important;
+          text-decoration-line: none !important;
+}
+
+small a:hover {
+  color: skyblue !important;
+  -webkit-text-decoration-line: underline !important;
+          text-decoration-line: underline !important;
+}
+/*# sourceMappingURL=styles.css.map */
