@@ -12,18 +12,18 @@ body {
 
 body {
   background: url("assets/img/beach_background_1920.jpg") !important;
+  background-attachment: fixed;
+  background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
 #own-gradient-navbar {
-  background: -webkit-gradient(linear, left top, left bottom, from(skyblue), to(rgba(255, 255, 255, 0))) !important;
-  background: linear-gradient(skyblue, rgba(255, 255, 255, 0)) !important;
+  background: skyblue !important;
 }
 
 #own-gradient-footer {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(skyblue)) !important;
-  background: linear-gradient(rgba(255, 255, 255, 0), skyblue) !important;
+  background: skyblue !important;
 }
 
 .own-text-shadow {
@@ -52,5 +52,16 @@ small a:hover {
   color: #648cd2;
   -webkit-box-shadow: 1px 1px 10px rgba(40, 40, 200, 0.3);
           box-shadow: 1px 1px 10px rgba(40, 40, 200, 0.3);
+}
+
+@media screen and (min-width: 768px) {
+  #own-gradient-navbar {
+    background: -webkit-gradient(linear, left top, left bottom, from(skyblue), to(rgba(255, 255, 255, 0))) !important;
+    background: linear-gradient(skyblue, rgba(255, 255, 255, 0)) !important;
+  }
+  #own-gradient-footer {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), to(skyblue)) !important;
+    background: linear-gradient(rgba(255, 255, 255, 0), skyblue) !important;
+  }
 }
 /*# sourceMappingURL=styles.css.map */

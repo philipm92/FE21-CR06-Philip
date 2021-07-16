@@ -7,11 +7,11 @@ export function RandomInt(lo: number, hi: number): number {
 // Generate random Date
 // new Date(year, month, day, hours, minutes, seconds)
 export function RandomDate(): Date {
-  let year = RandomInt(2019, 2021);
+  let year = RandomInt(2020, 2022);
   let month = RandomInt(0, 11);
   let day = (month == 1) ? RandomInt(1,28) : RandomInt(1, 31); // check for Feb.
-  let hours = RandomInt(0, 23);
-  let minutes = RandomInt(0, 59);
+  let hours = RandomInt(8, 14);
+  let minutes = [0, 15, 30, 45][RandomInt(0, 3)]; //RandomInt(0, 59);
   return new Date(year, month, day, hours, minutes);
 }
 
@@ -24,10 +24,15 @@ export interface PlaceInterface {
   zip_code: number;
   image: string;
   date: Date;
+  description?: string;
+  duration?: number;
+  price?: number;
+  country?: string;
   GetPosition: Function;
   GetBlogDate: Function;
   _gettimestring_: Function;
   _addleadingzero_: Function;
+  _createdatestring_: Function;
 }
 
 // Create Super/Parent Class for all other classes that implements "Places" for less code

@@ -1,14 +1,13 @@
-<div class="text-white container d-flex flex-column align-items-center justify-content-center own-text-shadow" style="min-height:80vh;">
-    <span class="rounded border border-2">
-        <div class="text-center">
+<div class="text-white container d-flex flex-column align-items-center justify-content-center" style="min-height:80vh;">
+    <span class="rounded border border-2 p-2 p-md-4">
+        <div class="text-center own-text-shadow">
             <h1>{{home_heading}}</h1>
-            <h4 class="mt-5 text-center mx-auto" style="width:70%;"><em>{{home_text}}</em></h4>
+            <h3 class="mt-5 text-center mx-auto" style="width:70%;"><em>{{home_text}}</em></h3>
+            <h5 class="mt-5 text-center mx-auto">{{home_further_desc}}</h5>
         </div>
 
         <div class="mt-5 mb-3 mx-auto text-center">
-            <a routerLink="{{ home_btn_link }}">
-                <button type="button" class="btn p-2 btn-outline-light own-btn">{{home_btn_text}}</button>
-            </a>
+            <a routerLink="{{ home_btn_link }}" class="btn p-2 btn-outline-light own-btn">{{home_btn_text}}</a>
         </div>
     </span>
 

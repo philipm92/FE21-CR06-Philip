@@ -1,18 +1,31 @@
 <h1 class="text-center mt-3 mt-md-4 mb-2 mb-md-4 own-text-shadow">Travel Destination</h1>
 
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-1 mx-lg-4 mb-4"> <!-- START BLOG GRID -->
+
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-1 mx-lg-4 mb-5"> <!-- START TRAVEL GRID -->
     <div *ngFor="let travel of travel_posts; index as travelId" class="col col-md-6 col-lg-3">
-        <div class="card h-100 bg-light text-dark">
-            <div class="card-header h5 text-center">{{travel.name}}</div>
-            <img src="assets/img/{{travel.image}}" class="img-fluid d-none d-md-inline" alt="{{travel.name}}">
+        <div class="card h-100 rounded border border-2 bg-transparent">
+            <div class="card-header text-center own-text-shadow">
+                <div class="h2">{{travel.name}}</div>
+                <div class="h5">{{travel.GetPosition()[0]}} {{travel.GetPosition()[1]}} {{travel.GetPosition()[2]}}</div>
+            </div>
+            <img src="assets/img/{{travel.image}}" class="card-img d-none d-md-inline rounded" alt="{{travel.name}}">
             <div class="card-body">
-                <p class="card-text text-center">{{travel.GetPosition()[0]}}<br />{{travel.GetPosition()[1]}}<br />{{travel.GetPosition()[2]}}</p>
-                <em><small>Created: {{travel.GetBlogDate()[0]}} <strong>-</strong> {{travel.GetBlogDate()[1]}}</small></em>
+                <p class="card-text text-center own-text-shadow h4"><strong>You can look forward to: <br /></strong></p>
+                <p *ngIf="travel.description != ''" class="card-text text-center own-text-shadow">{{ travel.description }}</p>
+                <p class="card-text text-center own-text-shadow"><strong>Starting on: {{travel.GetBlogDate()[0]}} {{travel.GetBlogDate()[1]}}</strong></p>
+                <p class="card-text text-center own-text-shadow">
+                    <strong>
+                        Duration: {{travel.duration}} week 
+                    </strong>
+                </p>
+                <div class="text-center m-0 p-0">
+                    <a (click)="AddToCart(travelId)" class="btn btn-outline-light own-btn">Book Location</a>
+                </div>
             </div>
             <!-- <div class="card-footer h6 text-center text-muted">
                 
             </div>  -->
-            <a href="#" class="btn btn-primary">Book Location</a>
+            
         </div>
     </div>
-</div> <!-- END BLOG GRID --> 
+</div> <!-- END TRAVEL GRID --> 

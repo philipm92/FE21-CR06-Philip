@@ -2,13 +2,13 @@
 
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4 mx-1 mx-lg-4 mb-4"> <!-- START BLOG GRID -->
     <div *ngFor="let blog of blog_posts; index as blogId" class="col col-md-6 col-lg-3">
-        <div class="card h-100 bg-light text-dark">
-            <div class="card-header h5 text-center">{{blog.name}}</div>
-            <img src="assets/img/{{blog.image}}" class="img-fluid d-none d-md-inline" alt="{{blog.name}}">
+        <div class="card h-100 rounded border border-2 bg-transparent">
+            <div class="card-header h5 text-center  own-text-shadow">{{blog.name}}</div>
+            <img src="assets/img/{{blog.image}}" class="card-img d-none d-md-inline rounded" alt="{{blog.name}}">
             <div class="card-body">
-                <p class="card-text text-center">{{blog.GetPosition()[0]}}<br />{{blog.GetPosition()[1]}}</p>
+                <p class="card-text text-center  own-text-shadow">{{blog.GetPosition()[0]}}<br />{{blog.GetPosition()[1]}}</p>
             </div>
-            <div class="card-footer h6 text-center text-muted">
+            <div class="card-footer h6 text-center text-light">
                 <em><small>Created: {{blog.GetBlogDate()[0]}} <strong>-</strong> {{blog.GetBlogDate()[1]}}</small></em>
             </div> 
         </div>

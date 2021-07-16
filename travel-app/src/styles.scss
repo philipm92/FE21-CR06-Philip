@@ -5,6 +5,7 @@ $btn-shadow-color: rgba(40, 40, 200, 0.3);
 * {
     box-sizing: border-box;
 }
+
 html,
 body {
     margin: 0;
@@ -14,19 +15,20 @@ body {
 
 body {
     background: url('assets/img/beach_background_1920.jpg') !important;
-    // background-attachment: fixed;
-    // background-position: center center;
+    background-attachment: fixed;
+    background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 
+// no gradient for mobile, to "fix" footer issue
 #own-gradient-navbar {
-    background: linear-gradient(skyblue, rgba(255, 255, 255, 0)) !important;
+    background: skyblue !important;
 }
 
 #own-gradient-footer {
-    background: linear-gradient(rgba(255, 255, 255, 0), skyblue) !important;
+    background: skyblue !important;
 }
 
 .own-text-shadow {
@@ -56,6 +58,12 @@ small a {
 
 
 // Mimicking bootstrap tablet breakpoint
-// @media screen and (min-width: 768px) {
-
-// }
+@media screen and (min-width: 768px) {
+    #own-gradient-navbar {
+        background: linear-gradient(skyblue, rgba(255, 255, 255, 0)) !important;
+    }
+    
+    #own-gradient-footer {
+        background: linear-gradient(rgba(255, 255, 255, 0), skyblue) !important;
+    }
+}
