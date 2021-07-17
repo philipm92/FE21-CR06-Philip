@@ -6,9 +6,9 @@
         <div class="card h-100 rounded border border-2 bg-transparent">
             <div class="card-header text-center own-text-shadow">
                 <div class="h2">{{travel.name}}</div>
-                <div class="h5">{{travel.GetPosition()[0]}} {{travel.GetPosition()[1]}} {{travel.GetPosition()[2]}}</div>
+                <div class="h5">{{travel.GetPosition()[0]}} {{travel.GetPosition()[1]}}, {{travel.GetPosition()[2]}}</div>
             </div>
-            <img src="assets/img/{{travel.image}}" class="card-img-top d-none d-md-inline rounded" alt="{{travel.name}}">
+            <img src="assets/img/{{travel.image}}" class="d-none d-md-inline rounded" alt="{{travel.name}}" style="height:250px;">
             <div class="card-body">
                 <p class="card-text text-center own-text-shadow h4"><strong>You can look forward to: <br /></strong></p>
                 <p *ngIf="travel.description != ''" class="card-text text-center own-text-shadow">{{ travel.description }}</p>
