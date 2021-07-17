@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   constructor() {
     this.home_heading =  "We are your ultimate trave experience provider!" ;
     this.home_text =  "With hundreds of holiday and destinations offered, we are your natural choice for planning it all out!" ;
-    this.home_btn_text =  "Learn more" ;
+    this.home_btn_text =  "Check out our travel locations" ;
     this.home_btn_link = "travel";
     this.home_further_desc = `
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Non tempora sapiente at voluptatum perspiciatis cum.

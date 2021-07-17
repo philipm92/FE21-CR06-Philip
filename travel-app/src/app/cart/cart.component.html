@@ -34,7 +34,6 @@
                     <th><strong>Total: </strong></th>
         
                     <!-- If the total sum is more than EUR 200, the user gets a 10% discount. If the total sum is more than EUR 500, they get a 20% discount. -->
-                        
                     <ng-container *ngIf="total_price < 200 ;else second">
                         <td></td>
                         <td><strong>{{total_price | currency }}</strong></td>
@@ -58,7 +57,7 @@
         <h3 class="text-center mt-3 mt-md-4 mb-1 mb-md-3 own-text-shadow">Add your contacts for ordering!</h3>
         <!-- Purchase Form -->
         <div class="row">
-            <form [formGroup]="checkout_form" (ngSubmit)="OnSubmit()"  class="my-0 mx-auto">
+            <form [formGroup]="checkout_form" (ngSubmit)="OnSubmit()">
                 <div class="row"> <!-- start row -->
                     <!-- Full Name -->
                     <div class="col-md-12">
@@ -92,7 +91,7 @@
                         </div>
                     </div>             
                     
-                    <div class="d-flex justify-content-center m-4  own-icon">
+                    <div class="d-flex justify-content-center mt-4 own-icon">
                         <button class="btn btn-outline-light own-btn" type="submit">Check out <br>
                             <i class="fa fa-handshake-o" style="font-size:2rem;"></i></button>
                     </div> 
