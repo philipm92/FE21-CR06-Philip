@@ -8,15 +8,21 @@
                 <div class="h2">{{travel.name}}</div>
                 <div class="h5">{{travel.GetPosition()[0]}} {{travel.GetPosition()[1]}} {{travel.GetPosition()[2]}}</div>
             </div>
-            <img src="assets/img/{{travel.image}}" class="card-img d-none d-md-inline rounded" alt="{{travel.name}}">
+            <img src="assets/img/{{travel.image}}" class="card-img-top d-none d-md-inline rounded" alt="{{travel.name}}">
             <div class="card-body">
                 <p class="card-text text-center own-text-shadow h4"><strong>You can look forward to: <br /></strong></p>
                 <p *ngIf="travel.description != ''" class="card-text text-center own-text-shadow">{{ travel.description }}</p>
                 <p class="card-text text-center own-text-shadow"><strong>Starting on: {{travel.GetBlogDate()[0]}} {{travel.GetBlogDate()[1]}}</strong></p>
+                <p class="card-text text-center own-text-shadow"><strong>{{travel.price | currency}}</strong></p>
                 <p class="card-text text-center own-text-shadow">
                     <strong>
-                        Duration: {{travel.duration}} week 
-                    </strong>
+                        <ng-container ng-template *ngIf="travel.duration == 1; else elseBlock">
+                            Duration: {{travel.duration}} week
+                        </ng-container>
+                        <ng-template #elseBlock>
+                            Duration: {{travel.duration}} weeks
+                        </ng-template> 
+                    </strong>                   
                 </p>
                 <div class="text-center m-0 p-0">
                     <a (click)="AddToCart(travelId)" class="btn btn-outline-light own-btn">Book Location</a>

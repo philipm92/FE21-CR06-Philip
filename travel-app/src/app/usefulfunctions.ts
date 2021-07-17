@@ -22,12 +22,13 @@ export interface PlaceInterface {
   address: string;
   city: string;
   zip_code: number;
+  country?: string;
   image: string;
   date: Date;
-  description?: string;
-  duration?: number;
   price?: number;
-  country?: string;
+  duration?: number;
+  description?: string;
+  quantity?: number;
   GetPosition: Function;
   GetBlogDate: Function;
   _gettimestring_: Function;
