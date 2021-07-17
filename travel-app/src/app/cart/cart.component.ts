@@ -26,10 +26,13 @@ export class CartComponent implements OnInit {
   
   OnSubmit(): void {
     // Process checkout data here
-    Swal.fire(`Thanks for ordering!\r\n Your order has been submitted!`);
-    console.warn(this.checkout_form.value.fullname, this.checkout_form.value.address);
-    this.booked_travels = this.cart_service.ClearCart();
-    this.checkout_form.reset();
+    if (this.checkout_form.valid) {
+      Swal.fire(`Thanks for ordering ${this.checkout_form.value.fullname}!\r\n Your order has been submitted!`);
+      console.warn(this.checkout_form.value.fullname, this.checkout_form.value.address);
+      this.booked_travels = this.cart_service.ClearCart();
+      this.checkout_form.reset();      
+    } else Swal.fire("Please enter all your data correctly!");
+
   }
 
   GetTotals(): void {

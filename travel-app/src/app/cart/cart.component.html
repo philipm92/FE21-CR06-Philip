@@ -9,10 +9,10 @@
 </div> -->
 
 <ng-container ng-template *ngIf="booked_travels.length == 0; else elseBlock">
-    <h3 class="text-center mt-3 mt-md-4 mb-2 mb-md-4 own-text-shadow">-Your Cart is currently empty.-</h3>  
+    <h3 class="text-center mb-4 mb-md-2 own-text-shadow">-Your Cart is currently empty.-</h3>  
 </ng-container>
 <ng-template #elseBlock>
-    <div class="m-2 m-md-5 text-center bg-transparent">
+    <div class="m-2 m-md-5 table-responsive text-center bg-transparent">
         <!-- Total Cart Table -->
         <table class="table text-white bg-transparent own-text-shadow table-borderless">
             <thead>
