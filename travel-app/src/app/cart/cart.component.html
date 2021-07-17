@@ -13,70 +13,94 @@
 </ng-container>
 <ng-template #elseBlock>
     <div class="m-2 m-md-5 text-center bg-transparent">
-
-    <table class="table text-white bg-transparent own-text-shadow table-borderless">
-    <thead>
-        <tr class="border-bottom">
-        <th scope="col">#</th>
-        <th scope="col">DESTINATION</th>
-        <th scope="col">PRICE</th>
-        <th scope="col">QUANTITY</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr class="border-bottom" *ngFor="let travel of booked_travels; index as travelId">
-            <th scope="row">{{travelId + 1}}</th>
-            <td>{{ travel.name }}</td>
-            <td>{{ travel.price | currency }}</td>
-            <td>{{ travel.quantity }}</td>
-        </tr>
-        <tr>
-            <th></th>
-   
-            <!-- If the total sum is more than EUR 200, the user gets a 10% discount. If the total sum is more than EUR 500, they get a 20% discount. -->
-                
-            <ng-container *ngIf="total_price < 200 ;else second">
-                <td></td>
-                <td><strong>{{total_price | currency }}</strong></td>
-            </ng-container>
-            <ng-template #second>
-                <ng-container *ngIf="total_price > 500;else third">
-                    <td><strong>DISCOUNT 20%</strong></td>
-                    <td><strong>{{total_price * 0.8 | currency }}</strong></td>
-                </ng-container>
-            </ng-template>
-                <ng-template #third>
-                    <td><strong>DISCOUNT 10%</strong></td>
-                    <td><strong>{{total_price *0.9 | currency }}</strong></td>
-                </ng-template>
-
-            <td><strong>{{total_quantity}}</strong></td>
-        </tr>
-    </tbody>
-    </table>        
-        <!-- <div class="d-none d-md-flex cart-header h4 border-bottom row">
-            <span class="col-6 mb-3 text-start">#</span>
-            <span class="col-6 mb-3 text-start">ITEM</span>
-            <span class="cart-price col-3 mb-3">PRICE</span>
-            <span class="col-3 mb-3">QUANTITY</span>
-        </div>        
-        <div class="container-fluid m-0 mb-3 border-bottom border-2 bg-transparent cart-row row d-flex flex-column flex-md-row align-items-center justify-content-center" *ngFor="let travel of booked_travels; index as i">
-            <div class="col-3 d-flex d-flex flex-column flex-md-row align-items-center justify-content-center justify-content-md-between">
-                <span>{{i}}</span>
-                <img class="cart-item-image my-3" src="assets/img/{{travel.image}}" alt="{{travel.name}}">
-                <div class="cart-item-title h5 own-text-shadow">{{travel.name}}</div>
-            </div>
+        <!-- Total Cart Table -->
+        <table class="table text-white bg-transparent own-text-shadow table-borderless">
+            <thead>
+                <tr class="border-bottom">
+                <th scope="col">#</th>
+                <th scope="col">DESTINATION</th>
+                <th scope="col">PRICE</th>
+                <th scope="col">QUANTITY</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="border-bottom" *ngFor="let travel of booked_travels; index as travelId">
+                    <th scope="row">{{travelId + 1}}</th>
+                    <td>{{ travel.name }}</td>
+                    <td>{{ travel.price | currency }}</td>
+                    <td>{{ travel.quantity }}</td>
+                </tr>
+                <tr>
+                    <th><strong>Total: </strong></th>
         
-            <span class="cart-price col-3 h4 my-3 own-text-shadow">{{travel.price | currency}}</span>
+                    <!-- If the total sum is more than EUR 200, the user gets a 10% discount. If the total sum is more than EUR 500, they get a 20% discount. -->
+                        
+                    <ng-container *ngIf="total_price < 200 ;else second">
+                        <td></td>
+                        <td><strong>{{total_price | currency }}</strong></td>
+                    </ng-container>
+                    <ng-template #second>
+                        <ng-container *ngIf="total_price > 500;else third">
+                            <td><strong>DISCOUNT 20%</strong></td>
+                            <td><strong>{{total_price * 0.8 | currency }}</strong></td>
+                        </ng-container>
+                    </ng-template>
+                        <ng-template #third>
+                            <td><strong>DISCOUNT 10%</strong></td>
+                            <td><strong>{{total_price *0.9 | currency }}</strong></td>
+                        </ng-template>
 
-            <div class="cart-qtty-action col-3 d-flex d-flex flex-row flex-nowrap align-items-center justify-content-center">            
-                <i class="btn minus fa fa-minus-circle my-auto" ></i>            
-                <div class="cart-quantity p-4 p-md-1 h4">1</div>            
-                <i class="btn plus fa fa-plus-circle my-auto"></i>        
-                <button class="del btn btn-danger rounded-circle  my-auto ms-3 fw-bold" type="button"> X </button>
-            </div>
-        </div> -->
-
+                    <td><strong>{{total_quantity}}</strong></td>
+                </tr>
+            </tbody>
+        </table> 
+        
+        <h3 class="text-center mt-3 mt-md-4 mb-1 own-text-shadow">Add your contacts for ordering!</h3>
+        <!-- Purchase Form -->
+        <div class="row mt-4 mb-5 mx-2">
+            <form [formGroup]="checkout_form" (ngSubmit)="OnSubmit()"  class="p-1 p-md-0 m-auto">
+                <div class="row"> <!-- start row -->
+                    <!-- Full Name -->
+                    <div class="col-md-12">
+                        <div class="mb-3 form-floating">
+                            <input id="floatingNameGrid" class="form-control" type="text" formControlName="fullname" placeholder="Full Name" />
+                            <label for="floatingNameGrid" class="text-dark">Full name</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Address -->
+                    <div class="col-md-12">
+                        <div class="mb-3 form-floating">
+                            <input id="floatingAddressGrid" class="form-control" type="text" formControlName="address" placeholder="Full Name" />
+                            <label for="floatingAddressGrid" class="text-dark">Address</label>
+                        </div>
+                    </div>
+                    
+                    <!-- Email address-->
+                    <div class="col-md-12">
+                        <div class="mb-3 form-floating">
+                            <input id="floatingMailGrid" class="form-control" type="email" formControlName="email" placeholder="Your Best E-Mail" />
+                            <label for="floatingMailGrid" class="text-dark">E-Mail address</label>
+                        </div>
+                    </div>
+    
+                    <!-- Phone Number -->
+                    <div class="col-md-12">
+                        <div class="mb-3 form-floating">
+                            <input id="floatingPhoneGrid" class="form-control input-medium bfh-phone" data-format="+(dd) ddd dddd" type="text" formControlName="phone" placeholder="Phone Number" />
+                            <label for="floatingPhoneGrid" class="text-dark">Phone number (optional)</label>
+                        </div>
+                    </div>             
+                    
+                    <div class="d-flex justify-content-center m-4">
+                        <button class="btn btn-outline-light own-btn" type="submit">Check out <br>
+                            <i class="fa fa-handshake-o own-icon"></i></button>
+                    </div> 
+                </div> <!-- end row -->
+    
+            </form>        
+        </div>
+   
     </div>
 </ng-template>
 

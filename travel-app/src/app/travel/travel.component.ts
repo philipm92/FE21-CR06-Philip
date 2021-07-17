@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Swal from 'sweetalert2';
 import { CartService } from '../cart.service';
-// import * as travel_data from '../travellist';
 import { Travel, TRAVEL_ARRAY } from '../travellist';
 import { Place, PlaceInterface } from '../usefulfunctions';
 
@@ -16,10 +16,9 @@ export class TravelComponent implements OnInit {
 
   AddToCart(travelId: number): void {
     let travel: any = this.travel_posts[travelId];
-    console.log(travel.name + " " + travelId);
-    // Swal.fire(pet.name + ' has been added to the cart!')
+    Swal.fire("One stay at " + travel.name + " has been added to the cart.")
     this.cart_service.AddToCart(travel);
-    console.log(this.cart_service.booked_travels.length);
+    console.log(travel.name, travelId);
   }
 
   ngOnInit(): void {

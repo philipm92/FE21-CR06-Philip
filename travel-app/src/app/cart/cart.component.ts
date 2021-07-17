@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
 import { CartService } from '../cart.service';
-import { PlaceInterface } from '../usefulfunctions';
-import { Travel, TRAVEL_ARRAY } from '../travellist';
-import { TravelComponent } from '../travel/travel.component';
+import { Travel } from '../travellist';
 
 @Component({
   selector: 'app-cart',
@@ -11,17 +10,24 @@ import { TravelComponent } from '../travel/travel.component';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
-  booked_travels: Array<PlaceInterface> = [] as PlaceInterface[];
+  booked_travels: Array<Travel> = [] as Travel[];
   checkout_form: FormGroup;
   total_price: number = 0;
   total_quantity: number = 0;
   constructor(private cart_service: CartService, private form_builder: FormBuilder) {
-    this.checkout_form = this.form_builder.group({name: "Test Customer", address: "CF Street 14/7, 21. Vienna"});
+    this.checkout_form = this.form_builder.group(
+      {
+        fullname: ['', [Validators.required, Validators.minLength(5)]],
+        email: ['', [Validators.required, Validators.email]],
+        phone: "",
+        address: ['', Validators.required]
+      });
   }
   
-  OnSubmit(customerData: {name: "", address: ""}[]) {
+  OnSubmit(): void {
     // Process checkout data here
-    console.warn('Your order has been submitted', customerData);
+    Swal.fire(`Thanks for ordering!\r\n Your order has been submitted!`);
+    console.warn(this.checkout_form.value.fullname, this.checkout_form.value.address);
     this.booked_travels = this.cart_service.ClearCart();
     this.checkout_form.reset();
   }

@@ -48,10 +48,24 @@ small a:hover {
           text-decoration-line: underline !important;
 }
 
+.own-btn {
+  text-shadow: 1px 1px 6px darkblue !important;
+}
+
 .own-btn:hover {
   color: #648cd2;
-  -webkit-box-shadow: 1px 1px 10px rgba(40, 40, 200, 0.3);
-          box-shadow: 1px 1px 10px rgba(40, 40, 200, 0.3);
+  text-shadow: 0px 0px 0px !important;
+  -webkit-box-shadow: 1px 1px 5px rgba(40, 40, 200, 0.3);
+          box-shadow: 1px 1px 5px rgba(40, 40, 200, 0.3);
+}
+
+.own-icon {
+  font-size: 40px;
+  color: white;
+}
+
+.own-icon:hover {
+  color: #648cd2;
 }
 
 @media screen and (min-width: 768px) {
