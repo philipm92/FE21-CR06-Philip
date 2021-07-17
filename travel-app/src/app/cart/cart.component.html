@@ -12,7 +12,7 @@
     <h3 class="text-center mb-4 mb-md-2 own-text-shadow">-Your Cart is currently empty.-</h3>  
 </ng-container>
 <ng-template #elseBlock>
-    <div class="m-2 m-md-5 table-responsive text-center bg-transparent">
+    <div class="my-2 my-md-5 mx-auto table-responsive text-center bg-transparent container">
         <!-- Total Cart Table -->
         <table class="table text-white bg-transparent own-text-shadow table-borderless">
             <thead>
@@ -58,7 +58,7 @@
         <h3 class="text-center mt-3 mt-md-4 mb-1 own-text-shadow">Add your contacts for ordering!</h3>
         <!-- Purchase Form -->
         <div class="row mt-4 mb-5 mx-2">
-            <form [formGroup]="checkout_form" (ngSubmit)="OnSubmit()"  class="p-1 p-md-0 m-auto">
+            <form [formGroup]="checkout_form" (ngSubmit)="OnSubmit()"  class="p-1 p-md-0 my-0 mx-auto">
                 <div class="row"> <!-- start row -->
                     <!-- Full Name -->
                     <div class="col-md-12">
@@ -92,9 +92,9 @@
                         </div>
                     </div>             
                     
-                    <div class="d-flex justify-content-center m-4">
+                    <div class="d-flex justify-content-center m-4  own-icon">
                         <button class="btn btn-outline-light own-btn" type="submit">Check out <br>
-                            <i class="fa fa-handshake-o own-icon"></i></button>
+                            <i class="fa fa-handshake-o" style="font-size:2rem;"></i></button>
                     </div> 
                 </div> <!-- end row -->
     
